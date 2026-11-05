@@ -1,0 +1,86 @@
+body {
+    font-family: Arial, sans-serif;
+    font-size: 30px;
+    color: #db0404;
+    animation: page-background 8s linear infinite alternate;
+}
+
+.videos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.video-container {
+    flex: 1 1 400px;
+    max-width: 560px;
+    margin-bottom: 20px;
+}
+
+.video-container iframe {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border: 0;
+}
+
+h1 {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+}
+
+h2,
+p,
+ul {
+    box-sizing: border-box;
+    max-width: 100%;
+    overflow-wrap: anywhere;
+}
+
+h1,
+h2,
+p,
+ul,
+li {
+    transition: filter 0.2s ease, text-shadow 0.2s ease;
+}
+
+h1:hover,
+h2:hover,
+p:hover,
+ul:hover,
+li:hover {
+    animation: text-color 2s infinite alternate,
+        text-size 1.5s ease-in-out infinite alternate;
+    filter: brightness(1.25);
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+
+@keyframes page-background {
+    0% { background-color: #00c3ff; }
+    25% { background-color: #a855f7; }
+    50% { background-color: #ffcf33; }
+    75% { background-color: #22c55e; }
+    100% { background-color: #ff6b6b; }
+}
+
+@keyframes text-color {
+    0% { color: #00a800; }
+    50% { color: #f47a1d; }
+    100% { color: #db0404; }
+}
+
+@keyframes text-size {
+    from { zoom: 1; }
+    to { zoom: 1.1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    body,
+    h1,
+    h2,
+    p,
+    ul {
+        animation: none;
+    }
+}
